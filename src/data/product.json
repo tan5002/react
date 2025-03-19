@@ -1,0 +1,25 @@
+{
+    "products": [
+        {
+            "price": 20,
+            "image": "https://bizweb.dktcdn.net/100/299/021/products/den-hoc-protex-pr001l-kem-bong-1.jpg?v=1614340621517",
+            "title": "KAJUTA",
+            "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur repellat id in, harum corrupti repudiandae vitae facere repellendus quia sit rerum deserunt expedita minima praesentium distinctio! Rerum possimus nihil voluptas?",
+            "isBestSeller": true
+        },
+        {
+            "price": 20,
+            "image": "https://bizweb.dktcdn.net/100/299/021/products/den-hoc-protex-pr001l-kem-bong-1.jpg?v=1614340621517",
+            "title": "KAJUTA",
+            "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur repellat id in, harum corrupti repudiandae vitae facere repellendus quia sit rerum deserunt expedita minima praesentium distinctio! Rerum possimus nihil voluptas?",
+            "isBestSeller": false
+        },
+        {
+            "price": 20,
+            "image": "https://bizweb.dktcdn.net/100/299/021/products/den-hoc-protex-pr001l-kem-bong-1.jpg?v=1614340621517",
+            "title": "KAJUTA",
+            "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur repellat id in, harum corrupti repudiandae vitae facere repellendus quia sit rerum deserunt expedita minima praesentium distinctio! Rerum possimus nihil voluptas?",
+            "isBestSeller": true
+        }
+    ]
+}
