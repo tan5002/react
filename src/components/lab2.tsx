@@ -8,35 +8,27 @@ interface ProductCardProps {
   title: string;
   description: string;
   isBestSeller: boolean;
+  color: string[];
 }
 
-export default function ProductCard({ price, image, title, description, isBestSeller }: ProductCardProps) {
+export default function ProductCard({ price, image, title, description, isBestSeller, color }: ProductCardProps) {
   const [count, setCount] = useState(1);
-  const [currentImage, setCurrentImage] = useState(image);
-
-  const colorOptions = [
-    { color: "bg-success", image: "https://paragon.com.vn/wp-content/uploads/2022/04/Bong-den-led-bulb-9w-E27-PBCB942E27L-1.jpeg" },
-    { color: "bg-primary", image: "https://denledgiarehcm.com/wp-content/uploads/2020/10/bong-den-bup-led-trai-chanh-3w.png" },
-    { color: "bg-danger", image: "https://catihome.com/wp-content/uploads/2022/10/NV62.jpeg" },
-    { color: "bg-warning", image: "https://catihome.com/wp-content/uploads/2021/06/NV30.jpeg" },
-  ];
+  const [selectedColor, setSelectedColor] = useState<string>("bg-light");
 
   return (
     <div className="d-flex align-items-center min-vh-100 bg-gradient" style={{ background: "linear-gradient(to bottom right, #cce5ff, #d6c4f3)" }}>
       <div className="card shadow-lg overflow-hidden d-flex flex-row" style={{ maxWidth: "800px", borderRadius: "20px" }}>
-        
-        {/* Image Section */}
-        <div className="col-6 bg-light d-flex justify-content-center align-items-center flex-column p-4">
-          <img src={currentImage} alt={title} className="img-fluid" />
+        <div className="col-6 d-flex justify-content-center align-items-center flex-column p-4">
+          <img src={image} alt={title} className={`img-fluid ${selectedColor}`} 
+          />
           <div className="d-flex align-items-center mt-3">
             <span className="text-muted me-3">Color</span>
             <div className="d-flex gap-2">
-              {colorOptions.map(({ color, image }, index) => (
+              {color.map((colorClass) => (
                 <span
-                  key={index}
-                  className={`rounded-circle ${color} d-inline-block`}
+                  className={`rounded-circle d-inline-block ${colorClass} ${colorClass === selectedColor ? 'border-2 border-white' : ''}`}
                   style={{ width: "20px", height: "20px", cursor: "pointer" }}
-                  onClick={() => setCurrentImage(image)}
+                  onClick={() => setSelectedColor(colorClass)}
                 ></span>
               ))}
             </div>
@@ -60,7 +52,7 @@ export default function ProductCard({ price, image, title, description, isBestSe
             <div className="quantity">
               <h6 className="text-muted">QUANTITY</h6>
               <div className="d-flex align-items-center border rounded">
-                <button className="btn btn-light px-2" onClick={() => setCount((prev) => Math.max(1, prev - 1))}>
+                <button className="btn btn-light px-2" onClick={() => setCount((i) => Math.max(1, i - 1))}>
                   <FaMinus />
                 </button>
                 <span className="px-3 fw-semibold">{count}</span>
