@@ -2,7 +2,6 @@
     "products": [
       {
         "price": 20,
-        "image": "./public/den.png",
         "title": "KAJUTA",
         "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur repellat id in, harum corrupti repudiandae vitae facere repellendus quia sit rerum deserunt expedita minima praesentium distinctio! Rerum possimus nihil voluptas?",
         "isBestSeller": true,
@@ -15,7 +14,6 @@
       },
       {
         "price": 20,
-        "image": "./public/den.png",
         "title": "KAJUTA",
         "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur repellat id in, harum corrupti repudiandae vitae facere repellendus quia sit rerum deserunt expedita minima praesentium distinctio! Rerum possimus nihil voluptas?",
         "isBestSeller": false,
@@ -28,7 +26,6 @@
       },
       {
         "price": 20,
-        "image": "./public/den.png",
         "title": "KAJUTA",
         "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur repellat id in, harum corrupti repudiandae vitae facere repellendus quia sit rerum deserunt expedita minima praesentium distinctio! Rerum possimus nihil voluptas?",
         "isBestSeller": true,
