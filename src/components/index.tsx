@@ -1,12 +1,5 @@
-export default function hello(props: {message: string; name: string}){
-    function handleClick(message : string, name: string){
-        alert(`${message}  ${name}`)
-    }
-    const {message, name} = props;
+export default function  Hello(){
     return (
-        <>
-        <h1>Tân Nguyễn</h1>
-        <button onClick={() => handleClick(message, name)}>Click me</button>
-        </>
+        <><h1>Xin chao cac ban </h1></>
     );
 }

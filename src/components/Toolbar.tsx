@@ -1,33 +1,32 @@
-<<<<<<< Tabnine <<<<<<<
-function Button ({//-
-    onClick,//-
-    children,//-
-}: {//-
-    onClick: () => void;//-
-    children : React.ReactNode;//-
-}){//-
-    return <button onClick={onClick}>{children} </button>//-
-function Button({ onClick, children }: { onClick: () => void; children: React.ReactNode }) {//+
-  return <button onClick={onClick}>{children}</button>;//+
+// component Button
+function Button({
+    onClick,
+    children,
+}: {
+    onClick: () => void;
+    children: React.ReactNode;
+}) {
+    return <button onClick={onClick}>{children}</button>;
 }
->>>>>>> Tabnine >>>>>>>// {"conversationId":"53da4fd6-3a32-469b-bd3e-c59ff178d9df","source":"instruct"}
 
-function PlayButton({movieName}:{movieName: string}){
-    function handlePlayClick(){
-        alert(`PLaying ${movieName}`)
+// component PlayButton sử dụng Button
+function PlayButton({ movieName }: { movieName: string }) {
+    function handlePlayClick() {
+        alert(`Playing ${movieName}!`);
     }
-    return <button onClick={handlePlayClick}>Play "{movieName}" </button>
+
+    return <Button onClick={handlePlayClick}>Play "{movieName}"</Button>;
 }
 
-function UploadButton(){
-   return <button onClick={() => alert("uploading")}>Upload image</button> 
+// component UploadButton sử dụng Button
+function UploadButton() {
+    return <Button onClick={() => alert("Uploading!")}>Upload Image</Button>;
 }
-
-export default function Toolbar(){
-    return(
+export default function Toolbar() {
+    return (
         <div>
-            <PlayButton movieName="Conan"/>
-            <UploadButton/>
+            <PlayButton movieName="Pi's Life" />
+            <UploadButton />
         </div>
-    )
+    );
 }
