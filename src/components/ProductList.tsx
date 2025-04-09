@@ -15,12 +15,22 @@ const ProductList = () => {
         { id: 10, name: 'Product 10', description: 'This is product', price: 1, image: "https://plus.unsplash.com/premium_photo-1681412205359-a803b2649d57?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
     ]
     return (
-        <div>
+        <div >
+            <div className="row row-cols-xl-4 row-cols-md-2 row-cols-1 gap-3">
+
             {productList.map((product) => (
-                    <li key={product.id}>
-                        <Link to={`/products/${product.id}`} state={product}>{product.name}</Link>
-                    </li>
-                ))}
+              <div className="card" style={{ width: "18rem" }}>
+                <img src={product.image} className="card-img-top" alt={product.name} />
+                <div className="card-body">
+                  <h5 className="card-title">{product.name}</h5>
+                  <p className="card-text">{product.description}</p>
+                  <Link to={`/products/${product.id}`} state={product} className="btn btn-primary">
+                    Detail
+                  </Link>
+                </div>
+              </div>
+            ))}
+            </div>
         </div>
     );
 };
