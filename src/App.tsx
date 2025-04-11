@@ -129,8 +129,12 @@ import CreatePost from './components/CreatePost';
 import PostList from './components/PostList';
 import { getUserPosts } from "./services/Api";
 import { Post } from "./types/Post";
+// import ProductItem from './components/ProductItem';
+import Cart from './components/Cart';
 
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import { CartProvider } from './context/CartContext';
 function RequireAuth({ children, isAuthenticated }: { children: ReactNode; isAuthenticated: boolean }) {
   const location = useLocation();
   if (!isAuthenticated) {
@@ -141,7 +145,7 @@ function RequireAuth({ children, isAuthenticated }: { children: ReactNode; isAut
 
 const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const userId = 7810777; 
+  const userId = 7824135; 
   const [posts, setPosts] = useState<Post[]>([]);
   const [refreshTrigger, setRefreshTrigger] = useState(0);
 
@@ -163,6 +167,7 @@ const App: React.FC = () => {
   };
 
   return (
+    <CartProvider>
     <BrowserRouter>
       <NavBar />
       <div className="container mt-4">
@@ -178,7 +183,6 @@ const App: React.FC = () => {
             }
           />
           <Route path="/users" element={<UserList />} />
-          <Route path="/products" element={<ProductList />} />
           <Route
             path="/products/:id"
             element={
@@ -187,19 +191,21 @@ const App: React.FC = () => {
               </RequireAuth>
             }
           />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/users/:id" element={<UserProfile />} />
+          <Route path="/products" element={<ProductList />} />
           <Route path="/students" element={<Students />}>
             <Route index element={<StudentsList />} />
             <Route path=":id" element={<StudentProfile />} />
           </Route>
           <Route path="/login" element={<Login onLogin={() => setIsAuthenticated(true)} />} />
         </Routes>
-
         {/* Post Area */}
         <CreatePost userId={userId} onPostCreated={handlePostCreated} />
         <PostList userId={userId} refreshTrigger={refreshTrigger} posts={posts} />
       </div>
     </BrowserRouter>
+    </CartProvider>
   );
 };
 

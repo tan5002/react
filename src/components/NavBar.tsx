@@ -26,7 +26,13 @@ function NavBar() {
               <Link className="nav-link" to="/students">StudentList</Link>
             </li>
             <li className="nav-item">
+              <Link className="nav-link" to="/products">products</Link>
+            </li>
+            {/* <li className="nav-item">
               <Link className="nav-link" to="/products">ProductsList</Link>
+            </li> */}
+            <li className="nav-item">
+              <Link className="nav-link" to="/cart">Cart</Link>
             </li>
           </ul>
         </div>
