@@ -28,9 +28,18 @@ function NavBar() {
             <li className="nav-item">
               <Link className="nav-link" to="/products">products</Link>
             </li>
-            {/* <li className="nav-item">
-              <Link className="nav-link" to="/products">ProductsList</Link>
-            </li> */}
+            <li className="nav-item">
+              <Link className="nav-link" to="/userTodo">User todo</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/UserPosts">User Post</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/createtodo">Create Todo</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/postComment">Post Comment</Link>
+            </li>
             <li className="nav-item">
               <Link className="nav-link" to="/cart">Cart</Link>
             </li>

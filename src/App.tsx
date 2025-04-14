@@ -129,12 +129,15 @@ import CreatePost from './components/CreatePost';
 import PostList from './components/PostList';
 import { getUserPosts } from "./services/Api";
 import { Post } from "./types/Post";
-// import ProductItem from './components/ProductItem';
 import Cart from './components/Cart';
-
+import UserPosts from './components/UserPosts';
+import UserTodos from './components/UserTodos';
+import CreateTodo from './components/CreateTodo';
+import PostComments from './components/PostComments';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { CartProvider } from './context/CartContext';
+import PostCommentWrapper from './components/PostCommentWrapper';
 function RequireAuth({ children, isAuthenticated }: { children: ReactNode; isAuthenticated: boolean }) {
   const location = useLocation();
   if (!isAuthenticated) {
@@ -199,6 +202,11 @@ const App: React.FC = () => {
             <Route path=":id" element={<StudentProfile />} />
           </Route>
           <Route path="/login" element={<Login onLogin={() => setIsAuthenticated(true)} />} />
+          <Route path="/userTodo" element={<UserTodos />} />
+          <Route path="/UserPosts" element={<UserPosts />} />
+          <Route path="/createtodo" element={<CreateTodo />} />
+          <Route path="/postComment/:postId" element={<PostCommentWrapper />} />
+
         </Routes>
         {/* Post Area */}
         <CreatePost userId={userId} onPostCreated={handlePostCreated} />
